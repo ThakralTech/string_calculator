@@ -1,6 +1,6 @@
 # app/models/string_calculator.rb
-class StringCalculator
+class StringAddition
   def add(numbers)
-    0
+    return 0 if numbers.empty?
   end
 end
