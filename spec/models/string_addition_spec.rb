@@ -47,5 +47,10 @@ RSpec.describe StringAddition, type: :model do
     it 'raises an exception for multiple negative numbers' do
       expect { calculator.add('1,-2,-3') }.to raise_error('negatives not allowed: -2, -3')
     end
+
+    # numbers which is larger then 1000
+    it 'ignores numbers larger than 1000' do
+      expect(calculator.add('2,1001')).to eq(2)
+    end
 	end
 end
