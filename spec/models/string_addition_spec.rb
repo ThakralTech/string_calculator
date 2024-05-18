@@ -45,7 +45,7 @@ RSpec.describe StringAddition, type: :model do
 
     # exception for multiple nagetive numbers
     it 'raises an exception for multiple negative numbers' do
-      expect { addition.add('1,-2,-3') }.to raise_error('negatives not allowed: -2, -3')
+      expect { calculator.add('1,-2,-3') }.to raise_error('negatives not allowed: -2, -3')
     end
 	end
 end

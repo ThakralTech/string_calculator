@@ -1,4 +1,4 @@
-# app/models/string_calculator.rb
+# app/models/string_addition.rb
 class StringAddition
   def add(numbers)
     return 0 if numbers.empty? # returns 0
@@ -11,7 +11,16 @@ class StringAddition
       numbers = parts[1]
     end
 
-    # sum for numbers
-    numbers.split(/#{delimiter}/).map(&:to_i).reduce(0, :+)
+    # split numbers
+    nums = numbers.split(/#{delimiter}/).map(&:to_i)
+    negatives = nums.select { |n| n < 0 } # check if any negative numbers
+    
+    # raise error for negative numbers
+    if negatives.any?
+      raise "negatives not allowed: #{negatives.join(', ')}"
+    end
+    
+    # sum numbers
+    nums.reduce(0, :+)
   end
 end
