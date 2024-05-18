@@ -13,6 +13,7 @@ class StringAddition
 
     # split numbers
     nums = numbers.split(/#{delimiter}/).map(&:to_i)
+    nums.reject! { |num| num > 1000 } # Ignore numbers bigger than 1000
     negatives = nums.select { |n| n < 0 } # check if any negative numbers
     
     # raise error for negative numbers
